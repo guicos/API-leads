@@ -1,0 +1,81 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = []
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Cnae {
+  id Int @id @default(autoincrement())
+  nome String @db.VarChar(255)
+  codigo Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  empresa Empresa[]
+}
+
+model Cargos {
+  id Int @id @default(autoincrement())
+  nome String @db.VarChar(255)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  leads Leads[]
+}
+
+model Setor {
+  id Int @id @default(autoincrement())
+  nome String @db.VarChar(255)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  empresa Empresa[]
+}
+
+model Area {
+  id Int @id @default(autoincrement())
+  nome String @db.VarChar(255)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  leads Leads[]
+}
+
+model Empresa {
+  id Int @id @default(autoincrement())
+  CNPJ String @db.VarChar(255)
+  nome_empresa String @db.VarChar(255)
+  nome_fantasia String @db.VarChar(255)
+  numero_funcionarios Int
+  numero_filial Int
+  filial Boolean
+  setor_id Int?
+  setor Setor? @relation(fields: [setor_id], references: [id])
+  cnae_id Int?
+  cnae Cnae? @relation(fields: [cnae_id], references: [id])
+  telefone String @db.VarChar(255)
+  linkedin String @db.VarChar(255)
+  DDD String @db.VarChar(3)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  leads Leads[]
+}
+
+model Leads {
+  id Int @id @default(autoincrement())
+  nome String @db.VarChar(255)
+  cargo_id Int?
+  cargo Cargos? @relation(fields: [cargo_id], references: [id])
+  area_id Int?
+  area Area? @relation(fields: [area_id], references: [id])
+  empresa_id Int?
+  empresa Empresa? @relation(fields: [empresa_id], references: [id])
+  telefone String @db.VarChar(255)
+  linkedin String @db.VarChar(255)
+  DDD String @db.VarChar(3)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
