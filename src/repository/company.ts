@@ -13,6 +13,7 @@ export class CompanyRepository {
                 CNPJ: data?.CNPJ,
                 filial: true,
                 numero_filial: data?.NumeroFilial,
+                email: data?.EmailCompany,
                 cnae: {
                     codigo: data?.codigo,
                     nome: data?.NomeCnae,

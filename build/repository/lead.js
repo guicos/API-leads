@@ -21,6 +21,7 @@ class LeadRepository {
                     DDD: data === null || data === void 0 ? void 0 : data.DDD,
                     telefone: data === null || data === void 0 ? void 0 : data.Telefone,
                     nome: data === null || data === void 0 ? void 0 : data.Nome,
+                    email: data === null || data === void 0 ? void 0 : data.Email,
                     empresa: {
                         nome_empresa: data === null || data === void 0 ? void 0 : data.NomeEmpresa,
                         nome_fantasia: data === null || data === void 0 ? void 0 : data.NomeFantasia,
@@ -28,6 +29,7 @@ class LeadRepository {
                         telefone: data === null || data === void 0 ? void 0 : data.EmpresaTelefone,
                         filial: data === null || data === void 0 ? void 0 : data.Filial,
                         numero_filial: data === null || data === void 0 ? void 0 : data.NumeroFilial,
+                        email: data === null || data === void 0 ? void 0 : data.EmailCompany,
                         cnae: {
                             nome: data === null || data === void 0 ? void 0 : data.NomeCnae,
                             codigo: data === null || data === void 0 ? void 0 : data.Codigo

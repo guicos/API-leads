@@ -10,6 +10,7 @@ export class LeadRepository {
                 DDD: data?.DDD,
                 telefone: data?.Telefone,
                 nome: data?.Nome,
+                email: data?.Email,
                 empresa: {
                     nome_empresa: data?.NomeEmpresa,
                     nome_fantasia: data?.NomeFantasia,
@@ -17,6 +18,7 @@ export class LeadRepository {
                     telefone: data?.EmpresaTelefone,
                     filial: data?.Filial,
                     numero_filial: data?.NumeroFilial,
+                    email: data?.EmailCompany,
                     cnae: {
                         nome: data?.NomeCnae,
                         codigo: data?.Codigo

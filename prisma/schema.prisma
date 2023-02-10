@@ -47,6 +47,7 @@ model Area {
 model Empresa {
   id Int @id @default(autoincrement())
   CNPJ String @db.VarChar(255)
+  email String @db.VarChar(255)
   nome_empresa String @db.VarChar(255)
   nome_fantasia String @db.VarChar(255)
   numero_funcionarios Int
@@ -67,6 +68,7 @@ model Empresa {
 model Leads {
   id Int @id @default(autoincrement())
   nome String @db.VarChar(255)
+  email String @db.VarChar(255)
   cargo_id Int?
   cargo Cargos? @relation(fields: [cargo_id], references: [id])
   area_id Int?

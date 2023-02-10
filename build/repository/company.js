@@ -24,6 +24,7 @@ class CompanyRepository {
                     CNPJ: data === null || data === void 0 ? void 0 : data.CNPJ,
                     filial: true,
                     numero_filial: data === null || data === void 0 ? void 0 : data.NumeroFilial,
+                    email: data === null || data === void 0 ? void 0 : data.EmailCompany,
                     cnae: {
                         codigo: data === null || data === void 0 ? void 0 : data.codigo,
                         nome: data === null || data === void 0 ? void 0 : data.NomeCnae,
