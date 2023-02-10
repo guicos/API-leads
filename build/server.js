@@ -23,4 +23,4 @@ router.get('/', (req, res) => {
 //Routers
 app.use('/lead', lead_1.default);
 app.use('/company', company_1.default);
-app.listen(21023, () => 'server running');
+app.listen(21160, () => 'server running');
