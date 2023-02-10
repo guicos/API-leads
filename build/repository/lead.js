@@ -29,32 +29,24 @@ class LeadRepository {
                         telefone: data === null || data === void 0 ? void 0 : data.EmpresaTelefone,
                         filial: data === null || data === void 0 ? void 0 : data.Filial,
                         numero_filial: data === null || data === void 0 ? void 0 : data.NumeroFilial,
-                        email: data === null || data === void 0 ? void 0 : data.EmailCompany,
-                        cnae: {
-                            nome: data === null || data === void 0 ? void 0 : data.NomeCnae,
-                            codigo: data === null || data === void 0 ? void 0 : data.Codigo
-                        },
-                        setor: {
-                            nome: data === null || data === void 0 ? void 0 : data.NomeSetor
-                        }
                     },
                     cargo: {
-                        nome: data === null || data === void 0 ? void 0 : data.NomeCargo
+                        nome: data === null || data === void 0 ? void 0 : data.NomeCargo,
                     },
                     area: {
-                        nome: data === null || data === void 0 ? void 0 : data.NomeArea
+                        nome: data === null || data === void 0 ? void 0 : data.NomeArea,
                     },
                 },
                 include: {
                     empresa: {
                         include: {
                             cnae: {},
-                            setor: {}
-                        }
+                            setor: {},
+                        },
                     },
                     area: {},
-                    cargo: {}
-                }
+                    cargo: {},
+                },
             });
         });
     }
@@ -64,7 +56,7 @@ class LeadRepository {
             return prisma.leads.delete({
                 where: {
                     id: id,
-                }
+                },
             });
         });
     }
@@ -76,7 +68,7 @@ class LeadRepository {
                 where: {
                     id: id,
                 },
-                data: Object.assign({}, data)
+                data: Object.assign({}, data),
             });
         });
     }
